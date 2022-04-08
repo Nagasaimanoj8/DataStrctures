@@ -29,7 +29,7 @@ namespace Datastructure
             CustomLinkedList linkedList = new CustomLinkedList();
             //linkedList.Append(56);
             //linkedList.Append(30);
-            //linkedList.Append(60);
+            //linkedList.Append(70);
             //linkedList.Display();
             //Console.ReadLine();
             linkedList.AddAtLast(56);//adding data in list
