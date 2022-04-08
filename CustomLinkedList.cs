@@ -197,11 +197,11 @@ namespace Datastructure
                 }
                 if (!flag)
                 {
-                    Console.WriteLine($"{data} Successfully Delete Element");
+                    Console.WriteLine($"\n{data} Successfully Delete Element");
                 }
                 else
                 {
-                    Console.WriteLine($"Element Not Found in linked list {data}");
+                    Console.WriteLine($"\nElement Not Found in linked list {data}");
                 }
             }
         }
@@ -215,7 +215,7 @@ namespace Datastructure
                 temp=temp.next;
                 count++;
             }
-            Console.WriteLine("Linked List Count is{count}");
+            Console.WriteLine($"\nLinked List Count is{count}");
             return count;
         }
     }

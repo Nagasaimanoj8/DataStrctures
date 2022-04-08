@@ -34,6 +34,7 @@ namespace Datastructure
             //Console.ReadLine();
             linkedList.AddAtLast(56);//adding data in list
             linkedList.AddAtLast(30);//adding data in list
+            linkedList.AddAtLast(40);//adding data in list
             linkedList.AddAtLast(70);//adding data in list
             linkedList.Display();    //call display method to print data
                                      // linkedList.InsertAfterValue(30, 40);//call InsertAtAfterValue Pass value
@@ -42,6 +43,7 @@ namespace Datastructure
            // Console.WriteLine("\n{0}is deleted from the Linkedlist",linkedList.DeleteFirstNode());
             //Console.WriteLine("\n{0} is deleted from linkedlist",linkedList.DeleteLastNode());
             linkedList.Display();
+            linkedList.Count();//call count method and print count
             //Console.WriteLine("\n{0} is present", linkedList.Search(30));
             Console.ReadLine();
 
