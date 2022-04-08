@@ -25,6 +25,7 @@ namespace Datastructure
                 lastnode.next = newNode;
 
             }
+            Console.WriteLine("{0} Node inserted into linkedlist",newNode.data);
         }
         private Node GetLastNode()
         {
@@ -65,6 +66,10 @@ namespace Datastructure
             //the previous Head node is no=w the second node of linked list
             this.head = new_node;
             Console.WriteLine("{0} Node inserted into linkedlist",new_node.data);
+        }
+        public void Append(int data)
+        {
+            AddAtLast(data);
         }
     }
 }

@@ -15,9 +15,9 @@ namespace Datastructure
             // my_line.AddLast(70);
              //my_line.AddFirst(300);
             CustomLinkedList linkedList= new CustomLinkedList();
-            linkedList.AddAtFirst(70);
-            linkedList.AddAtFirst(30);
-            linkedList.AddAtFirst(56);
+            linkedList.Append(56);
+            linkedList.Append(30);
+            linkedList.Append(70);
             linkedList.Display();
               Console.ReadLine();                      
         }
