@@ -94,13 +94,13 @@ namespace Datastructure
                 if (position != 1)
                     Console.WriteLine("Position out of range {position}");
             }
-            Console.WriteLine("\nInserted Value is  ", head); 
+            Console.WriteLine("\nInserted Value is  ", head);
             return head;
 
         }
         public int DeleteFirstNode()
         {
-            if(this.head == null)
+            if (this.head == null)
             {
                 Console.WriteLine("Linked list empty");
                 return 0;
@@ -113,14 +113,14 @@ namespace Datastructure
         public int DeleteLastNode()
         {
             Node newNode = this.head;
-            if(this.head == null)
+            if (this.head == null)
             {
                 Console.WriteLine("Linked List empty");
                 return 0;
             }
-            if(this.head.next == null)
+            if (this.head.next == null)
             {
-                this.head=null;
+                this.head = null;
                 return 0;
             }
             while (newNode.next.next != null)
@@ -128,34 +128,34 @@ namespace Datastructure
                 newNode = newNode.next;
             }
             int lastDeleteNode = newNode.next.data;
-            newNode.next=null;
+            newNode.next = null;
             return lastDeleteNode;
         }
         public int Search(int value)
         {
-            Node temp=this.head;
-            while(temp != null)
+            Node temp = this.head;
+            while (temp != null)
             {
-                if(temp.data == value)
+                if (temp.data == value)
                 {
                     //Console.WriteLine("\nNode is present");
                     return value;
                 }
-                temp=temp.next; 
+                temp = temp.next;
             }
-            Console.WriteLine("\n{0} is not present",value);
+            Console.WriteLine("\n{0} is not present", value);
             return 0;
 
         }
-        public void InsertAfterValue(int after,int data) 
+        public void InsertAfterValue(int after, int data)
         {
-            if(head == null)
+            if (head == null)
             {
                 Console.WriteLine("Linked list is empty");
             }
             else
             {
-                Node temp=head;
+                Node temp = head;
                 while (temp != null)
                 {
                     if (temp.data == after)
@@ -168,7 +168,55 @@ namespace Datastructure
                     temp = temp.next;
                 }
                 Console.WriteLine("Successfull added Element {after} After {data}");
+            }
+        }
+        public void DeleteElement(int data)
+        {
+            bool flag = false;
+            int count = 0;
+            if (head == null)
+                Console.WriteLine("List is Empty");
+            else
+            {
+                Node temp = head;
+                Node previousNode = null;
+                while (temp != null)
+                {
+                    if (temp.data == data)
+                    {
+                        if (count == 1)
+                        {
+                            head = temp.next;
+                        }
+                        previousNode.next = temp.next;
+                        flag = true;
+                        break;
+                    }
+                    previousNode = temp;
+                    temp = temp.next;
+                }
+                if (!flag)
+                {
+                    Console.WriteLine($"{data} Successfully Delete Element");
+                }
+                else
+                {
+                    Console.WriteLine($"Element Not Found in linked list {data}");
                 }
             }
         }
+
+        public int Count()
+        {
+            int count = 0;
+            Node temp = head;
+            while(temp != null)
+            {
+                temp=temp.next;
+                count++;
+            }
+            Console.WriteLine("Linked List Count is{count}");
+            return count;
+        }
     }
+}
