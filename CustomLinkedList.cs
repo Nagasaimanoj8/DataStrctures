@@ -25,7 +25,7 @@ namespace Datastructure
                 lastnode.next = newNode;
 
             }
-            Console.WriteLine("{0} Node inserted into linkedlist",newNode.data);
+            Console.WriteLine("{0} Node inserted into linkedlist", newNode.data);
         }
         private Node GetLastNode()
         {
@@ -53,9 +53,38 @@ namespace Datastructure
                     Console.Write(" " + temp.data + "");
                     temp = temp.next;
                 }
-
-
             }
+
+        }
+        internal Node InsertAtParticularPosition(int position, int data)
+        {
+            if (position < 1)
+                Console.WriteLine("Invalid position");
+            if (position >= 1)
+            {
+                var newNode = new Node(data);
+                newNode.next = this.head;
+                head = newNode;
+            }
+            else
+            {
+                while (position-- != 0)
+                {
+                    if (position == 1)
+                    {
+                        Node node = new Node(data);
+                        node.next = this.head;
+                        head.next = node;
+                        break;
+                    }
+                    head = head.next;
+                }
+                if (position != 1)
+                    Console.WriteLine("Position out of range");
+            }
+            Console.WriteLine("\nInserted Value is  ",head);
+            return head;
+
         }
         public void AddAtFirst(int new_data)
         {
@@ -65,11 +94,24 @@ namespace Datastructure
             new_node.next = this.head;
             //the previous Head node is no=w the second node of linked list
             this.head = new_node;
-            Console.WriteLine("{0} Node inserted into linkedlist",new_node.data);
+            Console.WriteLine("{0} Node inserted into linkedlist", new_node.data);
         }
         public void Append(int data)
         {
             AddAtLast(data);
         }
+        public int DeleteFirstNode()
+        {
+            if(this.head == null)
+            {
+                Console.WriteLine("Linked list empty");
+                return 0;
+            }
+            int deleteNode = this.head.data;
+            this.head = this.head.next;
+            Console.WriteLine("\n{0} is deleted from the list", deleteNode);
+            return deleteNode;
+        }
     }
 }
+

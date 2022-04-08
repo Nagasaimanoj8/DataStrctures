@@ -10,16 +10,19 @@ namespace Datastructure
     {
         static void Main(string[] args)
         {
-           // LinkedList<int> my_line = new LinkedList<int>();
-           // my_line.AddLast(10);
+            // LinkedList<int> my_line = new LinkedList<int>();
+            // my_line.AddLast(10);
             // my_line.AddLast(70);
-             //my_line.AddFirst(300);
-            CustomLinkedList linkedList= new CustomLinkedList();
-            linkedList.Append(56);
-            linkedList.Append(30);
-            linkedList.Append(70);
+            //my_line.AddFirst(300);
+            CustomLinkedList linkedList = new CustomLinkedList();
+            linkedList.AddAtLast(56);
+            linkedList.AddAtLast(30);
+            linkedList.AddAtLast(70);
             linkedList.Display();
-              Console.ReadLine();                      
+          //  linkedList.InsertAtParticularPosition(2, 30);
+            Console.WriteLine("{0} is deleted from the Linkedlist",  linkedList.DeleteFirstNode());
+            linkedList.Display();
+            Console.ReadLine();
         }
            
 
