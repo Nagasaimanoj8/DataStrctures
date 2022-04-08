@@ -92,7 +92,7 @@ namespace Datastructure
                     head = head.next;
                 }
                 if (position != 1)
-                    Console.WriteLine("Position out of range {position}");
+                    Console.WriteLine("\nPosition out of range {position}");
             }
             Console.WriteLine("\nInserted Value is  ", head);
             return head;
