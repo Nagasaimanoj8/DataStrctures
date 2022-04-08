@@ -112,6 +112,27 @@ namespace Datastructure
             Console.WriteLine("\n{0} is deleted from the list", deleteNode);
             return deleteNode;
         }
+        public int DeleteLastNode()
+        {
+            Node newNode = this.head;
+            if(this.head == null)
+            {
+                Console.WriteLine("Linked List empty");
+                return 0;
+            }
+            if(this.head.next == null)
+            {
+                this.head=null;
+                return 0;
+            }
+            while (newNode.next.next != null)
+            {
+                newNode = newNode.next;
+            }
+            int lastDeleteNode = newNode.next.data;
+            newNode.next=null;
+            return lastDeleteNode;
+        }
     }
 }
 

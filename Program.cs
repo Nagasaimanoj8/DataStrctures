@@ -20,7 +20,7 @@ namespace Datastructure
             linkedList.AddAtLast(70);
             linkedList.Display();
           //  linkedList.InsertAtParticularPosition(2, 30);
-            Console.WriteLine("{0} is deleted from the Linkedlist",  linkedList.DeleteFirstNode());
+            Console.WriteLine("\n{0}is deleted from the Linkedlist",  linkedList.DeleteLastNode());
             linkedList.Display();
             Console.ReadLine();
         }
