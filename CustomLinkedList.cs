@@ -147,6 +147,28 @@ namespace Datastructure
             return 0;
 
         }
+        public void InsertAfterValue(int after,int data) 
+        {
+            if(head == null)
+            {
+                Console.WriteLine("Linked list is empty");
+            }
+            else
+            {
+                Node temp=head;
+                while (temp != null)
+                {
+                    if (temp.data == after)
+                    {
+                        Node node = new Node(data);
+                        node.next = temp.next;
+                        temp.next = node;
+                        break;
+                    }
+                    temp = temp.next;
+                }
+                Console.WriteLine("Successfull added Element {after} After {data}");
+                }
+            }
+        }
     }
-}
-

@@ -32,11 +32,12 @@ namespace Datastructure
             //linkedList.Append(70);
             //linkedList.Display();
             //Console.ReadLine();
-            linkedList.AddAtLast(56);
-           // linkedList.AddAtLast(30);
-            linkedList.AddAtLast(70);
-           // linkedList.Display();                     
-            linkedList.InsertAtParticularPosition(2, 30);
+            linkedList.AddAtLast(56);//adding data in list
+            linkedList.AddAtLast(30);//adding data in list
+            linkedList.AddAtLast(70);//adding data in list
+            linkedList.Display();    //call display method to print data
+            linkedList.InsertAfterValue(30, 40);//call InsertAtAfterValue Pass value
+           // linkedList.InsertAtParticularPosition(2, 30);
            // Console.WriteLine("\n{0}is deleted from the Linkedlist",linkedList.DeleteFirstNode());
             //Console.WriteLine("\n{0} is deleted from linkedlist",linkedList.DeleteLastNode());
             linkedList.Display();
