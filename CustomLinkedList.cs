@@ -205,7 +205,6 @@ namespace Datastructure
                 }
             }
         }
-
         public int Count()
         {
             int count = 0;
@@ -217,6 +216,56 @@ namespace Datastructure
             }
             Console.WriteLine($"\nLinked List Count is{count}");
             return count;
+        }
+        public Node LinkedListSorted(Node head)
+        {
+            if(head == null || head.next == null)
+            {
+                return head;
+            }
+            Node temp = head;
+            Node slow = head;
+            Node fast = head;
+            while(fast!=null&&fast.next != null)
+            {
+                temp = slow;
+                slow=slow.next;
+                fast=fast.next.next;
+            }
+            temp.next = null;
+            Node leftside=LinkedListSorted(head);
+            Node rightside=LinkedListSorted(slow);
+            return Merge(leftside, rightside);
+        }
+        public Node Merge( Node first,Node second)
+        {
+            Node sorted_temp = new Node();
+            Node current_node = sorted_temp;
+            while (first != null && second != null)
+            {
+                if (first.data < second.data)
+                {
+                    current_node.next = first;
+                    first = first.next;
+                }
+                else
+                {
+                    current_node.next = second;
+                    second = second.next;   
+                }
+                current_node = current_node.next;
+            }
+            if(first != null)
+            {
+                current_node.next=first;
+                first = first.next;
+            }
+            if(second != null)
+            {
+                current_node.next=second;
+                second = second.next;
+            }
+            return sorted_temp.next;
         }
     }
 }
